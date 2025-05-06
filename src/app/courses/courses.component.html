@@ -1,26 +1,21 @@
 <div class="search-container">
-    <input
-      type="text"
-      placeholder="Sök på kurskod eller kursnamn"
-      [(ngModel)]="searchText"
-      (input)="filterCourses()"
-    />
-  </div>
-  
-  <table>
+    <input class="search-input" type="text" placeholder="Sök på kurskod eller kursnamn" [(ngModel)]="searchText"
+        (input)="filterCourses()" />
+</div>
+
+<table>
     <thead>
-      <tr>
-        <th (click)="sortCourses('code')">Kurskod</th>
-        <th (click)="sortCourses('coursename')">Kursnamn</th>
-        <th (click)="sortCourses('progression')">Progression</th>
-      </tr>
+        <tr>
+            <th (click)="sortCourses('code')">Kurskod</th>
+            <th (click)="sortCourses('coursename')">Kursnamn</th>
+            <th (click)="sortCourses('progression')">Progression</th>
+        </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let course of filteredCourses">
-        <td>{{ course.code }}</td>
-        <td>{{ course.coursename }}</td>
-        <td>{{ course.progression }}</td>
-      </tr>
+        <tr *ngFor="let course of filteredCourses">
+            <td>{{ course.code }}</td>
+            <td>{{ course.coursename }}</td>
+            <td>{{ course.progression }}</td>
+        </tr>
     </tbody>
-  </table>
-  
+</table>
